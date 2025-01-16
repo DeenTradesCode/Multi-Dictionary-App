@@ -1,0 +1,22 @@
+[
+    {
+      "id": 1,
+      "word": "Photosynthesis",
+      "definition": "The process by which plants convert sunlight into food."
+    },
+    {
+      "id": 2,
+      "word": "Mitosis",
+      "definition": "A type of cell division that results in two daughter cells each having the same number and kind of chromosomes as the parent nucleus."
+    },
+    {
+      "id": 3,
+      "word": "DNA",
+      "definition": "Deoxyribonucleic acid, the material that carries genetic information."
+    },
+    {
+      "id": 4,
+      "word": "Chlorophyll",
+      "definition": "A green pigment found in plants that absorbs light for photosynthesis."
+    }
+  ]

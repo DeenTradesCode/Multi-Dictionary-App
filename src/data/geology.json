@@ -1,0 +1,23 @@
+[
+    {
+      "id": 1,
+      "word": "Sedimentary Rock",
+      "definition": "Rock formed by the deposition of material at Earth's surface."
+    },
+    {
+      "id": 2,
+      "word": "Volcano",
+      "definition": "An opening in Earth's crust through which molten rock, gases, and ash are ejected."
+    },
+    {
+      "id": 3,
+      "word": "Tectonic Plates",
+      "definition": "Large slabs of Earth's lithosphere that move over the semi-fluid asthenosphere."
+    },
+    {
+      "id": 4,
+      "word": "Earthquake",
+      "definition": "A sudden and violent shaking of the ground caused by movements of the Earth's tectonic plates."
+    }
+  ]
+  

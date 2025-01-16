@@ -1,0 +1,23 @@
+[
+    {
+      "id": 1,
+      "word": "Cirrhosis",
+      "definition": "A liver disease marked by scarring and loss of function."
+    },
+    {
+      "id": 2,
+      "word": "Hypertension",
+      "definition": "High blood pressure, which can lead to heart disease or stroke."
+    },
+    {
+      "id": 3,
+      "word": "Anemia",
+      "definition": "A condition in which you lack enough healthy red blood cells to carry adequate oxygen to your body's tissues."
+    },
+    {
+      "id": 4,
+      "word": "Inflammation",
+      "definition": "A protective response of body tissues to injury or infection, characterized by redness, heat, swelling, and pain."
+    }
+  ]
+  
