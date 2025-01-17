@@ -10,19 +10,29 @@ function QuizGame() {
     const [questionIndex, setQuestionIndex] = useState(0);
     const [feedback, setFeedback] = useState('');
     const [questions, setQuestions] = useState([]);
+    const [selectedTag, setSelectedTag] = useState('geology'); 
+
+    const tags = ['geology', 'biology', 'chemistry', 'medicine'];
 
     useEffect(() => {
         const fetchQuizData = async () => {
             try {
-                const response = await fetch(multiChoiceUrl + '?tag=geology');
+                const response = await fetch(`${multiChoiceUrl}?tag=${selectedTag}`);
                 const data = await response.json();
-                setQuestions(data.questions);
-            } catch (error) {
-                console.error("Error fetching quiz data:", error);
-            }
-        };
-        fetchQuizData();
-    }, []);
+                console.log('Fetched Questions:', data.questions);  // Log fetched data
+                setQuestions(data.questions);  // Set questions data
+              } catch (error) {
+                setError(error);  
+                console.error('Error fetching quiz data:', error);
+              } 
+            };
+        
+            fetchQuizData();
+          }, [selectedTag]);  
+          if (questionIndex >= questions.length) {
+            return <div>Your Score: {score} / {questions.length}</div>;
+          }
+        
 
     const handleAnswer = (userAnswer) => {
         if (userAnswer === questions[questionIndex].correctAnswer) {
