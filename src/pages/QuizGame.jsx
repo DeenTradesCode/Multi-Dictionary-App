@@ -59,7 +59,7 @@ function QuizGame() {
             <h3>Quiz Game</h3>
             <p>{questions[questionIndex]?.question}</p>
 
-            <div className="answers-container">
+            <div class="answers-container">
                 {questions[questionIndex]?.choices.map((choice, index) => (
                     <button key={index} onClick={() => handleAnswer(choice)}>
                         {choice}

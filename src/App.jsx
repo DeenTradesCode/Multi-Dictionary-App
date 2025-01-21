@@ -7,15 +7,15 @@ import NavBar from './components/NavBar';
 function App() {
   return (
     <Router>
-      <div>
+      <div class="container grid m-auto mt-4">
         <NavBar /> 
         <h1 className="mb-4 text-2xl font-bold">Welcome to the Dictionary App</h1>
         <DictionarySelector /> 
-        <Routes>
+        {/* <Routes>
           <Route path="/" element={<Home />} /> 
           <Route path="/quiz" element={<QuizGame />} />  
           <Route path="/dictionary/:id" element={<DictionaryPage />} />  
-        </Routes>
+        </Routes> */}
       </div>
     </Router>
   );
