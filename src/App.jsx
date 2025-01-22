@@ -16,6 +16,8 @@ import MedDictionary from './pages/MedDictionary';
 
 
 function App() {
+ 
+
   return (
     <Router>
        
@@ -31,10 +33,8 @@ function App() {
           {/* <Route path="/quiz" element={<QuizGame />} />  
           <Route path="/dictionary/:id" element={<DictionaryPage />} />   */}
         </Routes>
-    
     </Router>
   );
 }
-
 
 export default App;
