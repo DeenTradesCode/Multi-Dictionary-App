@@ -1,40 +1,29 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-
-
-
-// Built pages
-
-
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
-
-// Base pages
-import BiologyDictionary from './pages/BiologyDictionary';
-import ChemistryDictionary from './pages/ChemistryDictionary';
-import GeologyDictionary from './pages/GeologyDictionary';
-import MedDictionary from './pages/MedDictionary';
-
+import DictionaryPage from './pages/DictionaryPage';
+import RandomWord from './components/RandomWord';
+import AllWords from './components/AllWords';
+import Quiz from './components/Quiz';
 
 
 function App() {
- 
-
   return (
-    <Router>
-       
-        <Home />
-        <Routes>
-          <Route path="/" element={<Home />} /> 
-          <Route path="/biology" element={<BiologyDictionary />} />
-          <Route path="/chemistry" element={<ChemistryDictionary />} />
-          <Route path="/geology" element={<GeologyDictionary />} />
-          <Route path="/medical" element={<MedDictionary />} />
-          {/* <Route path="/ph" element={<RandomWordPage />} /> */}
-          
-          {/* <Route path="/quiz" element={<QuizGame />} />  
-          <Route path="/dictionary/:id" element={<DictionaryPage />} />   */}
-        </Routes>
-    </Router>
-  );
+     <Router>
+            <div>
+                <Routes>
+                    {/* Home Page */}
+                    <Route path="/" element={<Home />} />
+
+                    {/* Dynamic Dictionary Page */}
+                    <Route path="/dictionary/:tag" element={<DictionaryPage />}>
+                        <Route path="random" element={<RandomWord />} />
+                        <Route path="all" element={<AllWords />} />
+                        <Route path="quiz" element={<Quiz />} />
+                    </Route>
+                </Routes>
+            </div>
+        </Router>
+    );
 }
 
 export default App;
