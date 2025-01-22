@@ -1,4 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+
 
 function DictionarySelector() {
   const [dictionaries, setDictionaries] = useState([]);
@@ -40,16 +42,13 @@ function DictionarySelector() {
   return (
     <div className="flex flex-col space-y-2">
       {dictionaries.map((dict) => (
-        <button
+        <Link
           key={dict._id}
+          to={`/dictionary/${dict.tags[0]}`}
           className="px-4 py-2 text-white bg-blue-500 rounded hover:bg-blue-600"
-          onClick={() => {
-            // Handle user selection of a dictionary here
-            console.log(`Selected dictionary: ${dict.title}`);
-          }}
         >
           {dict.title}
-        </button>
+        </Link>
       ))}
     </div>
   );
