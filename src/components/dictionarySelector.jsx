@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function DictionarySelector() {
   const [dictionaries, setDictionaries] = useState([]);
@@ -38,11 +39,11 @@ function DictionarySelector() {
 
 //  ! this only supports four dictionaries
   return (
-    <div className="flex flex-col space-y-2">
+    <div class="flex flex-col space-y-2">
       {dictionaries.map((dict) => (
         <button
           key={dict._id}
-          className="px-4 py-2 text-white bg-blue-500 rounded hover:bg-blue-600"
+          class="px-4 py-2 text-white bg-blue-500 rounded hover:bg-blue-600"
           onClick={() => {
             // Handle user selection of a dictionary here
             console.log(`Selected dictionary: ${dict.title}`);

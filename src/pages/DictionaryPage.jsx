@@ -46,4 +46,4 @@ function DictionaryPage() {
   );
 }
 
-export const randomWordUrl = `${dictionaryUrl}/random-word`;
+export default DictionaryPage;
