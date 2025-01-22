@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 // Dictionary object containing medicine terms and their meaning
 const medicineDictionary = {
@@ -11,7 +11,7 @@ const medicineDictionary = {
     'Antioxidants': 'Drugs used to protect cells from damage by free radicals.',
     'Antipsychotics': 'Drugs used to treat psychological disorders.',
     'Antipsychotic drugs': 'Drugs used to treat psychological disorders.',
-);
+};
 
 // Function to get a random word and its meaning from the dictionary
 const getRandomWord = () => {
