@@ -2,13 +2,16 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 // Built components
 import RandomWordPage from './pages/RandomWordPage';
+import { useState } from 'react';
 import QuizGame from './pages/QuizGame';
 import Home from './pages/Home';
 import DictionaryPage from './pages/DictionaryPage';
+import DictionarySelector from './components/dictionarySelector';
 import NavBar from './components/NavBar';
 
-
 function App() {
+  const [tag, setTag] = useState('')
+
   return (
     <Router>
         <NavBar /> 
@@ -23,10 +26,8 @@ function App() {
           <Route path="/quiz" element={<QuizGame />} />  
           <Route path="/dictionary/:id" element={<DictionaryPage />} />  
         </Routes>
-    
     </Router>
   );
 }
-
 
 export default App;
