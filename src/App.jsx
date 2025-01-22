@@ -6,8 +6,9 @@ import NavBar from './components/NavBar';
 function App() {
   return (
     <Router>
-      <div>
+      <div className="container grid m-auto mt-4">
         <NavBar /> 
+        <Home />
         <Routes>
           <Route path="/" element={<Home />} /> 
           <Route path="/quiz" element={<QuizGame />} />  
