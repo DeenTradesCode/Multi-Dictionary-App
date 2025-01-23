@@ -1,4 +1,4 @@
-import DictionarySelector from '../components/dictionarySelector';
+import DictionarySelector from '../components/1dictionarySelector';
 
 function Home() {
    

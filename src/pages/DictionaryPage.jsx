@@ -1,49 +1,29 @@
-import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import biologyData from '../data/biology.json';
-import chemistryData from '../data/chemistry.json';
-import geologyData from '../data/geology.json';
-import medicineData from '../data/medicine.json';
+// DictionaryPage.jsx
+import { Outlet, useNavigate, useParams } from 'react-router-dom';
 
+const DictionaryPage = () => {
+    const { tag } = useParams(); // Extract the tag from the URL
+    const navigate = useNavigate();
 
+    const handleNavigation = (action) => {
+        navigate(`/dictionary/${tag}/${action}`);
+    };
 
-//this is where we choose dictionary type (med, geo, biology, chemistry)
-function DictionaryPage() {
-  const { id } = useParams(); 
-  const [words, setWords] = useState([]);
+    return (
+        <div>
+            <h1>{tag.charAt(0).toUpperCase() + tag.slice(1)} Dictionary</h1>
 
-  // loading data based on the route parameter so (`id`)
-  useEffect(() => {
-    switch (id) {
-      case 'biology':
-        setWords(biologyData);
-        break;
-      case 'chemistry':
-        setWords(chemistryData);
-        break;
-      case 'geology':
-        setWords(geologyData);
-        break;
-      case 'medicine':
-        setWords(medicineData);
-        break;
-      default:
-        setWords([]);
-    }
-  }, [id]);
+            {/* Action Buttons */}
+            <div style={{ display: 'flex', justifyContent: 'center', gap: '10px', margin: '20px 0' }}>
+                <button onClick={() => handleNavigation('random')}>Random Word</button>
+                <button onClick={() => handleNavigation('all')}>All Words</button>
+                <button onClick={() => handleNavigation('quiz')}>Quiz</button>
+            </div>
 
-  return (
-    <div>
-      <h2>{id.charAt(0).toUpperCase() + id.slice(1)} Dictionary</h2>
-      <ul>
-        {words.map((word) => (
-          <li key={word.id}>
-            <strong>{word.word}</strong>: {word.definition}
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-}
+            {/* Nested Routes Rendered Here */}
+            <Outlet />
+        </div>
+    );
+};
 
 export default DictionaryPage;

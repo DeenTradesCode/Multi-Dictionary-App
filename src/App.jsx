@@ -1,9 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import DictionaryPage from './pages/DictionaryPage';
-import RandomWord from './components/RandomWord';
-import AllWords from './components/AllWords';
-import Quiz from './components/Quiz';
+import RandomWord from './components/2RandomWord';
+import AllWords from './components/2Allwords';
+import Quiz from './components/2Quiz';
 
 
 function App() {
