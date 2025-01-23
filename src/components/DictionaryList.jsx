@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 
-const dictionaryUrl =
-  'https://1rnoszgn46.execute-api.us-east-1.amazonaws.com/multi-details';
+const dictionaryUrl = 'https://1rnoszgn46.execute-api.us-east-1.amazonaws.com/multi-details';
 
 function DictionaryList({ setTag }) {
   const [dictionaries, setDictionaries] = useState([]); // To store the list of dictionaries

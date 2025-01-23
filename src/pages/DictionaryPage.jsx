@@ -5,8 +5,6 @@ import chemistryData from '../data/chemistry.json';
 import geologyData from '../data/geology.json';
 import medicineData from '../data/medicine.json';
 
-
-
 //this is where we choose dictionary type (med, geo, biology, chemistry)
 function DictionaryPage() {
   const { id } = useParams(); 

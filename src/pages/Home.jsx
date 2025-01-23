@@ -1,15 +1,12 @@
-import DictionarySelector from '../components/dictionarySelector';
-
-function Home() {
-   
-    return (
-      <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-         <h1 className="mb-4 text-4xl font-bold">Welcome to the Multi-Dictionary App</h1>
-          <p className="mb-6 text-lg">Select a category to start browsing words!!</p>
-        <div>
-           <DictionarySelector />
-        </div>
-      </div>
-    );
-   }
-export default Home;
+export const Home = () => {
+  return (
+    <div className="px-4 py-2">
+      <h1 className="font-bold text-4xl sm:text-5xl md:text-6xl p-6 text-center">
+        Multi-Dictionary
+      </h1>
+      <h3 className="my-4 sm:my-6 font-bold text-xl sm:text-2xl text-center">
+        Please select a dictionary:
+      </h3>
+    </div>
+  );
+};

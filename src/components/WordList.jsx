@@ -1,10 +1,8 @@
 import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
-const wordsApiUrl =
-  'https://1rnoszgn46.execute-api.us-east-1.amazonaws.com/only-words';
-const definitionApiUrl =
-  'https://1rnoszgn46.execute-api.us-east-1.amazonaws.com/by-id?id=';
+const wordsApiUrl = 'https://1rnoszgn46.execute-api.us-east-1.amazonaws.com/only-words';
+const definitionApiUrl = 'https://1rnoszgn46.execute-api.us-east-1.amazonaws.com/by-id?id=';
 
 function WordList({ tag }) {
   const [words, setWords] = useState([]);
@@ -102,22 +100,22 @@ function WordList({ tag }) {
           .map((letter) => (
             <div key={letter} className="mb-4">
               <h4
-                className="text-md font-bold cursor-pointer"
+                className="text-md font-bold cursor-pointer text-white"
                 onClick={() => toggleCategory(letter)}
               >
                 {letter} {expandedCategory === letter ? '-' : '+'}
               </h4>
               {expandedCategory === letter && (
-                <ul className="list-disc pl-5">
+                <ul className="list-none pl-5">
                   {categorizedWords[letter].map((wordObj, index) => (
                     <li
                       key={index}
-                      className="cursor-pointer text-blue-500 hover:underline"
+                      className="cursor-pointer text-blue-500 hover:underline text-white"
                       onClick={() => handleWordClick(wordObj)}
                     >
                       {wordObj.word}
                       {selectedWord && selectedWord.word === wordObj.word && (
-                        <div className="text-sm text-gray-700 ml-4">
+                        <div className="text-sm text-gray-700 ml-4 text-white">
                           {loadingDefinition ? (
                             <p>Loading definition...</p>
                           ) : definitionError ? (
@@ -136,17 +134,6 @@ function WordList({ tag }) {
       </div>
     </div>
   );
-
-  // return (
-  //   <div>
-  //     <h3 className="text-lg font-semibold">Words:</h3>
-  //     <ul className="list-disc pl-5">
-  //       {words.map((word, index) => (
-  //         <li key={index}>{word.word}</li>
-  //       ))}
-  //     </ul>
-  //   </div>
-  // );
 }
 
 WordList.propTypes = {

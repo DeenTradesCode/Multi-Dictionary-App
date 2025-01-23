@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-
 function DictionarySelector() {
   const [dictionaries, setDictionaries] = useState([]);
   const [isLoading, setIsLoading] = useState(true);

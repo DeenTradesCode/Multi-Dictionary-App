@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './QuizGame.css';
 
-
 const dictionaryUrl = 'https://1rnoszgn46.execute-api.us-east-1.amazonaws.com';
 const multiChoiceUrl = `${dictionaryUrl}/multichoice`;
 

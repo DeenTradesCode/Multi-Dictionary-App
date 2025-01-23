@@ -1,39 +1,23 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-
-
-
-// Built pages
-
-
-import Home from './pages/Home';
-
-// Base pages
-import BiologyDictionary from './pages/BiologyDictionary';
-import ChemistryDictionary from './pages/ChemistryDictionary';
-import GeologyDictionary from './pages/GeologyDictionary';
-import MedDictionary from './pages/MedDictionary';
-
-
+import { Home } from "./pages/Home";
+import DictionaryList from "./components/DictionaryList";
+import WordList from "./components/WordList";
+import { useState } from "react";
+import Footer from "./components/Footer";
 
 function App() {
- 
+  const [tag, setTag] = useState("");
+  const [dictionaries, setDictionaries] = useState([]);
 
   return (
-    <Router>
-       
+    <>
+      <div className="bg-emerald-500 text-center text-color">
         <Home />
-        <Routes>
-          <Route path="/" element={<Home />} /> 
-          <Route path="/biology" element={<BiologyDictionary />} />
-          <Route path="/chemistry" element={<ChemistryDictionary />} />
-          <Route path="/geology" element={<GeologyDictionary />} />
-          <Route path="/medical" element={<MedDictionary />} />
-          {/* <Route path="/ph" element={<RandomWordPage />} /> */}
-          
-          {/* <Route path="/quiz" element={<QuizGame />} />  
-          <Route path="/dictionary/:id" element={<DictionaryPage />} />   */}
-        </Routes>
-    </Router>
+        <DictionaryList setTag={setTag} />
+        <div className="capitalize text-3xl font-bold">{tag}</div>
+        <WordList tag={tag} />
+        <Footer />
+      </div>
+    </>
   );
 }
 
