@@ -29,8 +29,9 @@ const AllWords = () => {
 
     return (
         <ul>
-            {words.map((word, index) => (
-                <li key={index}>{word}</li>
+            {words.map((word) => (
+              
+                <li key={word._id}>{word.text}</li>
             ))}
         </ul>
     );

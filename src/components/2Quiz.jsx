@@ -30,8 +30,9 @@ const Quiz = () => {
     return (
         <div>
             <h2>Quiz Game</h2>
-            {quizData.map((item, index) => (
-                <p key={index}>
+            {quizData.map((item) => (
+                
+                <p key={item._id}>
                     {item.word}: {item.definition}
                 </p>
             ))}
